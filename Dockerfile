@@ -18,7 +18,7 @@ RUN mkdir /home/app/webapp
 WORKDIR /home/app/webapp
 
 RUN bash -lc 'rvm --default use ruby-2.6.1'
-run gem install bundler:1.17.3
+run gem install bundler:1.17.2
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
