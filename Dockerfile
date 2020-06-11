@@ -10,7 +10,7 @@ RUN mv /pd_build/ruby-2.6.6.sh /pd_build/ruby-2.6.1.sh
 RUN /pd_build/ruby-2.6.*.sh
 #   Node.js and Meteor standalone support.
 #   (not needed if you already have the above Ruby support)
-#RUN /pd_build/nodejs.sh
+RUN /pd_build/nodejs.sh
 
 RUN rm /etc/nginx/sites-enabled/default
 RUN mkdir /home/app/webapp
