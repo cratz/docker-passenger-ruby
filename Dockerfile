@@ -21,10 +21,11 @@ RUN bash -lc 'rvm --default use ruby-2.6.1'
 RUN gem install bundler:1.17.2
 
 RUN apt remove -y cmdtest
+RUN apt remove -y yarn
 RUN apt -y autoremove
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt install -y yarn
+RUN apt get update && apt install -y yarn
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
