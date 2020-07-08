@@ -25,8 +25,10 @@ RUN apt remove -y yarn
 RUN apt -y autoremove
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt update && apt install -y yarn
+RUN apt update && apt upgrade -y
+RUN apt install -y yarn
 RUN apt install -y wget
+RUN apt install -y imagemagick
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
