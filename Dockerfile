@@ -29,6 +29,7 @@ RUN apt update && apt upgrade -y
 RUN apt install -y yarn
 RUN apt install -y wget
 RUN apt install -y imagemagick
+RUN apt install -y awscli
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
